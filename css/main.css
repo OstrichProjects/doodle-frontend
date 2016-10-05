@@ -2,18 +2,42 @@
   margin: 0;
 }
 
-canvas {
-  border: 1px solid black;
+body {
+  min-height: 100vh;
 }
 
-#color-picker .picking-area {
+header {
+  width: 100%;
+  height: 100px;
+  font-size: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  line-height: 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas-div {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border: 1px solid black;
+  background: #FFFFFF;
+}
+
+#color-area {
   cursor: default;
   width: 200px;
   height: 200px;
   margin: 5px;
   border: 1px solid #DDD;
   position: relative;
-  float: left;
 	background: -moz-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
 									hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
 				-moz-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
@@ -29,7 +53,7 @@ canvas {
 	background-color: #F00;
 }
 
-#color-picker .picker {
+#color-area-picker {
   cursor: pointer;
 	width: 10px;
 	height: 10px;
@@ -38,7 +62,7 @@ canvas {
 	position: absolute;
 }
 
-#color-picker .picker:before {
+#color-area-picker:before {
 	width: 8px;
 	height: 8px;
 	content: "";
@@ -47,13 +71,13 @@ canvas {
 	border-radius: 50%;
 }
 
-#color-picker .hue {
+#hue-picker {
   cursor: default;
   height: 200px;
   width: 28px;
   margin: 5px;
   border: 1px solid #FFF;
-  float: left;
+  position: relative;
 	/*background: url("https://mdn.mozillademos.org/files/5701/hue.png") center;*/
 	background: -moz-linear-gradient(top, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
 				#00F 66.66%, #F0F 83.33%, #F00 100%);
@@ -65,11 +89,29 @@ canvas {
 				#00F 66.66%, #F0F 83.33%, #F00 100%);
 }
 
-#color-picker .slider-picker {
+#hue-slider {
   height: 2px;
   width: 100%;
   border: 1px solid #777;
   background-color: #FFF;
   position: relative;
   left: -1px;
+}
+
+#size-picker > input {
+  height: 200px;
+  width: 50px;
+  -webkit-appearance: slider-vertical;
+}
+
+#cursor-display {
+  display: flex;
+  height: 150px;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+}
+
+#cursor-display > div {
+  border-radius: 50%;
 }
